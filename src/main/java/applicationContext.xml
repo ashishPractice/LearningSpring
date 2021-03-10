@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id='teacher' class="com.ashish.spring.entity.Teacher">
+		<property name="name" value="Arti"></property>
+		<property name="age" value="30"></property>
+	</bean>
+
+
+	<bean id='subject' class="com.ashish.spring.entity.Subject">
+		<property name="name" value="Advance Java"></property>
+		<property name="teacher" ref="teacher"></property>
+	</bean>
+	
+	
+	<bean id='student' class="com.ashish.spring.entity.Student">
+		<property name="name" value="Ashish"></property>
+		<property name="age" value="28"></property>
+		<property name="address" value="Texas"></property>
+		<property name="subject" ref="subject"></property>
+	</bean>
+
+
+
+</beans>

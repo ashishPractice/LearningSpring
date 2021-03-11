@@ -13,7 +13,21 @@
 	</bean>
 
 
+<!--  Explicit way of dependency injection-->
 	<bean id='subject' class="com.ashish.spring.entity.Subject">
+		<property name="name" value="Advance Java"></property>
+		<property name="teacher" ref="teacher"></property>
+	</bean>
+	
+	<!--  Implicit way of dependency injection-->
+	<!-- Auto wire byType. Note: MOre than one bean should not be there -->
+	<bean id='subject1' class="com.ashish.spring.entity.Subject" autowire="byType">
+		<property name="name" value="Advance Java"></property>
+		<property name="teacher" ref="teacher"></property>
+	</bean>
+	
+	<!-- Auto wire byName. Note: The object name in Class should be same as bean id name -->
+	<bean id='subject2' class="com.ashish.spring.entity.Subject" autowire="byType">
 		<property name="name" value="Advance Java"></property>
 		<property name="teacher" ref="teacher"></property>
 	</bean>
